@@ -21,6 +21,7 @@ class QuotesSpider(scrapy.Spider):
         	}
 
         	yield(item)
+
         next_page_url = response.css('li.next > a::attr(href)').extract_first()
         if next_page_url:
             next_page_url = response.urljoin(next_page_url)
